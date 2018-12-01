@@ -45,31 +45,6 @@ def process_vernam_cypher(text, key=None):
             p += 1
 
     return answer, key_bits
-    # bin_text = [bin(ord(x))[2:] for x in text]
-    # bin_text = "".join(el for el in bin_text)
-    # bbs_instance = BlumBlumShub()
-    # if key:
-    #     key_bits = [bin(ord(x))[2:] for x in key]
-    #     key_bits = "".join(el for el in key_bits)
-    # else:
-    #     key_bits = bbs_instance.run_bbs(bits=512, len_of_message=len(bin_text))
-    #
-    # print(bin_text)
-    # print(key_bits)
-    # answer = ""
-    # p = 0
-    # for ch in bin_text:
-    #     answer += str(int(ch) ^ int(key_bits[p]))
-    #     p += 1
-    # # answer = int(bin_text) ^ int(key_bits)
-    # n = 6
-    # ciphered_msg = [answer[i:i + n] for i in range(0, len(answer), n)]
-    # ciphered_msg = "".join(el for el in [chr(int(x)) for x in ciphered_msg])
-    # key = [str(key_bits)[i:i + n] for i in range(0, len(str(key_bits)), n)]
-    # key = "".join(el for el in [chr(int(x)) for x in key])
-    # return ciphered_msg, key
-    # # return text_from_bits(), text_from_bits(key_bits)
-    # return text_from_bits(int(answer))
 
 
 def main():
