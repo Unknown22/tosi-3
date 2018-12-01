@@ -29,12 +29,9 @@ def process_vernam_cypher(text, key=None):
             answer += str(int(ch) ^ int(key[p]))
             p += 1
         n = 10
-        print("Bin_text", answer)
         answer = [answer[i:i + n] for i in range(0, len(answer), n)]
-        print("Answer:", answer)
 
-        answer = [bytes(el, encoding='utf-8').decode() for el in answer]
-        print("Answer 2:", answer)
+        answer = [chr(int(el, 2)) for el in answer]
         answer = "".join([el for el in answer])
         key_bits = None
     else:
@@ -46,9 +43,6 @@ def process_vernam_cypher(text, key=None):
         for ch in bin_text:
             answer += str(int(ch) ^ int(key_bits[p]))
             p += 1
-        print("Bin_text",bin_text)
-        print("Key bits:",key_bits)
-        print("Answer ciphered:",answer)
 
     return answer, key_bits
     # bin_text = [bin(ord(x))[2:] for x in text]
